@@ -14,8 +14,6 @@ Then run:
 
     elm make Main.elm --output index.html
 
-Since there are no additional frames defined in the `init` function of the code, you might want to add some on your own!
-
 ## License
 
 BSD-3

@@ -39,13 +39,13 @@ update msg model =
 
               newCurrent =
                 { x = 
-                    model.current.x + (target.x - model.current.x) 
+                    model.current.x + (target.x - model.current.x) * newProgress
                 , y = 
-                    model.current.y + (target.y - model.current.y)
+                    model.current.y + (target.y - model.current.y) * newProgress
                 , width = 
-                    model.current.width + (target.width - model.current.width) 
+                    model.current.width + (target.width - model.current.width) * newProgress
                 , height = 
-                    model.current.height + (target.height - model.current.height) 
+                    model.current.height + (target.height - model.current.height) * newProgress
                 }
             in
               { model
@@ -92,6 +92,12 @@ init =
       , height = 100
       }
   , animation = Nothing
-  , frames = []
+  , frames =
+    [ { x = 0
+      , y = 0
+      , width = 300
+      , height = 200
+      }
+    ]
   }
 
