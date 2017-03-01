@@ -15,7 +15,7 @@ update msg model =
   case msg of
     Forth ->
       { model
-        | animation =
+        | transition =
             List.head model.frames
               |> Maybe.map (\first -> (0,first))
         , frames =
@@ -23,13 +23,13 @@ update msg model =
       }
 
     Tick diff ->
-      case model.animation of
+      case model.transition of
         Nothing ->
           model
         Just (oldProgress, target) ->
           if oldProgress == 1 then
             { model
-              | animation = Nothing
+              | transition = Nothing
             }
           else
             let
@@ -50,7 +50,7 @@ update msg model =
             in
               { model
                 | current = newCurrent
-                , animation = Just (newProgress, target)
+                , transition = Just (newProgress, target)
               } 
 
 view { current } =
@@ -68,7 +68,7 @@ view { current } =
 
 subscriptions model =
     Sub.batch
-        [ case model.animation of
+        [ case model.transition of
             Nothing ->
                 Sub.none
             Just _ ->
@@ -91,7 +91,7 @@ init =
       , width = 150
       , height = 100
       }
-  , animation = Nothing
+  , transition = Nothing
   , frames =
     [ { x = 0
       , y = 0
