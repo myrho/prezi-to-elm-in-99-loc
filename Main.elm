@@ -55,12 +55,9 @@ update msg model =
 
 view { current } =
   svg
-    [ width "100vw"
-    , height "100vh"
-    , (toString current.x) ++ " "
-        ++ (toString current.y) ++ " "
-        ++ (toString current.width) ++ " "
-        ++ (toString current.height)
+    [ width "100vw", height "100vh"
+    , (toString current.x) ++ " " ++ (toString current.y) ++ " "
+        ++ (toString current.width) ++ " " ++ (toString current.height)
         |> viewBox
     ]
     [ circle [ cx "100", cy "50", r "30", fill "blue" ] []
@@ -100,4 +97,3 @@ init =
       }
     ]
   }
-
