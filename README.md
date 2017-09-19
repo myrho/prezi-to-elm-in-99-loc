@@ -2,7 +2,7 @@
 
 This is the source code to a talk, I gave at [TopConf 2017](https://www.topconf.com/conference//linz-2017/talk/porting-prezi-to-elm-in-100-lines-of-code/) in Linz, Austria. It implements a simplified version of [Prezi](https://prezi.com) in [Elm](http://elmlang.org) based on SVG. 
 
-Eventually I will release a more elaborated version of this code with the ability to upload custom SVG files with presentation contents AND the frames.
+📣 **Check out this slim little Web tool for running your SVG based presentation: [Dive SVG](https://myrho.github.io/dive-svg/)!** 📣
 
 You might also be interested in [Dive](https://github.com/myrho/dive), another approach based on HTML5 Canvas.
 
